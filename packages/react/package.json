@@ -7,8 +7,8 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsup src/index.ts --format esm,cjs --dts",
-    "dev": "tsup src/index.ts --format esm,cjs --dts --watch",
+    "build": "tsup src/index.tsx --format esm,cjs --dts --external react",
+    "dev": "tsup src/index.ts --format esm,cjs --dts --watch  --external react",
     "lint": "eslint src/**/*.ts* --fix"
   },
   "keywords": [],
@@ -16,10 +16,16 @@
   "license": "MIT",
   "type": "commonjs",
   "dependencies": {
+    "@paulinho-ui/eslint-config": "*",
     "@paulinho-ui/tokens": "*",
     "@paulinho-ui/ts-config": "*",
-    "@paulinho-ui/eslint-config": "*",
+    "@stitches/react": "^1.2.8",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
     "tsup": "^8.5.0",
     "typescript": "^5.8.3"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.8"
   }
 }
